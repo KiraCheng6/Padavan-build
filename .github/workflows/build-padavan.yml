@@ -41,7 +41,7 @@ jobs:
         fi
         cd /opt/rt-n56u/toolchain-mipsel
         sh dl_toolchain.sh
-        cd trunk
+        cd /opt/rt-n56u/trunk
         mkdir -p /opt/images
     - name: Build Firmware
       env:
