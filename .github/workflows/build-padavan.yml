@@ -42,14 +42,15 @@ jobs:
         fi
         cd /opt/rt-n56u/toolchain-mipsel
         sh dl_toolchain.sh
-        cd /opt/rt-n56u
-        mkdir -p /opt/images
+
+        #mkdir -p /opt/images
     - name: Build Firmware
       env:
         TNAME: NEWIFI-D1
         KERNEL: 3.4
       run: |
         cd /opt/rt-n56u/trunk
+        mkdir -p /opt/images
         if [ ! -f configs/templates/$TNAME.config ] ; then
         echo "configs/templates/$TNAME.config not found "
         exit 1
